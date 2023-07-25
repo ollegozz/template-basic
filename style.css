@@ -58,7 +58,7 @@ body {
 }
 
 [class*="__container"] {
-    max-width: 1087px;
+    max-width: 1440px;
     margin: 0px auto;
     padding: 0px 15px;
 }
@@ -91,11 +91,18 @@ body {
 
 /* ============================== */
 
+._none {
+    display: none;
+}
+
 header {
     display: flex;
     justify-content: flex-end;
 }
 
+.menu__list-items {
+    display: flex;
+}
 
 /* Гамбургер иконка */
 .menu-btn {
@@ -148,7 +155,7 @@ header {
     width: 100%;
     height: 100%;
     padding: 15px;
-    background: #FFEFBA;
+    /* background: #FFEFBA; */
     transform: translateX(-100%);
     transition: transform 0.5s;
 }
