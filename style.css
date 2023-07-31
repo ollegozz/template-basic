@@ -1,4 +1,4 @@
-/* Обнуление */
+/* #region Обнуление */
 *,
 *::before,
 *::after {
@@ -43,6 +43,7 @@ body {
     font-size: 12px;
     color: #616161;
 }
+ /* #endregion */
 
 /* ------------------ */
 .wrapper {
@@ -58,15 +59,15 @@ body {
 }
 
 [class*="__container"] {
-    max-width: 1087px;
+    max-width: 1280px;
     margin: 0px auto;
     padding: 0px 15px;
 }
 
 /* PC */
-@media (max-width: 1087px) {
+@media (max-width: 1280px) {
     [class*="__container"] {
-        max-width: 970px;
+        max-width: 1080px;
     }
 }
 
@@ -175,23 +176,24 @@ body {
     }
 }
 
+
+
 @media (max-width: 767.98px) {
+
+    .active {
+            left: -100%;
+        }
+
     .menu__body {
         position: fixed;
         top: 0;
-        left: -100%;
-        width: 100%;
+        width: 70%;
         height: 100%;
         overflow: auto;
-        background-color: rgb(97, 64, 64);
+        background-color: rgba(224, 114, 114, 1);
         padding: 90px 15px 30px 15px;
-        transition: left 0.3s ease 0s;
+        transition: left 0.3s ease 1s;
     }
-
-    .header:target .menu__body {
-        left: 0;
-    }
-
 
     .menu__list {
         flex-direction: column;
@@ -226,13 +228,13 @@ body {
     color: #fcfdfe;
     padding: 14px 30px;
     border-radius: 5px;
-    background-color: #4285f4;
-    transition: background-color 0.3s ease 0s;
+    background-color: rgb(224, 114, 114);
+    transition: 0.3s ease 0s;
     text-align: center;
 }
 
 .button:hover {
-    background-color: #70a3f7;
+    background-color: rgb(224, 88, 88);
 }
 
 /* --------------------------- */
@@ -304,13 +306,19 @@ body {
 
 .footer__items {
     display: flex;
-    column-gap: 50px;
+    column-gap: 20px;
     row-gap: 20px;
     justify-content: center;
     align-items: center;
 }
 
-.footer__item {}
+.footer__item {
+    text-align: center;
+}
+
+.footer__item img{
+    width: 50%;
+}
 
 @media (max-width: 500px) {
     .footer {
