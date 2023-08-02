@@ -224,9 +224,9 @@ body {
         }
     }
 
-        .animClose {
-            animation: animClose .3s linear forwards;
-        }
+    .animClose {
+        animation: animClose .3s linear forwards;
+    }
 
     @keyframes animClose {
         0% {
@@ -343,7 +343,6 @@ body {
 }
 
 /* #region Footer  =========================================================== */
-
 .footer {
     padding: 45px 0;
 }
@@ -375,4 +374,5 @@ body {
         flex-direction: column;
     } */
 }
+
 /* #endregion */
