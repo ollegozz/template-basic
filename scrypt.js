@@ -17,10 +17,10 @@ function showBurger() {
 showBurger()
 
 const carouselArrows = document.querySelectorAll('.carousel__arrow');
-
+const carouselItems = document.querySelectorAll('.carousel-item');
 
 let currentIndex = 0;
-const carouselItems = document.querySelectorAll('.carousel-item');
+
 function goToSlide(index) {
     if (index === 0) {
         index = carouselItems.length - 1;
@@ -35,8 +35,8 @@ function goToNextSlide() {
 }
 function goToPrevSlide() {
     if (currentIndex === 0 ) {
-        currentIndex = carouselItems.length 
-    }
+        currentIndex = carouselItems.length
+    } 
     goToSlide(currentIndex - 1);
 }
 
@@ -48,32 +48,9 @@ function initArrows() {
                 console.log(currentIndex);
             } else {
                 goToNextSlide()
-                console.log(currentIndex);
             }
         })
     })
 }
 
-// console.log(carouselArrows);
-
 initArrows()
-
-
-// arr.forEach((item) => {
-//     if (item.dataset.dir === 'left') {
-//         console.log(item.dataset.dir)
-//         goToNextSlide()
-//     } else {
-//         goToPrevSlide()
-//         console.log(item.dataset.dir)
-//     } 
-// })
-
-
-
-// arr.addEventListener('click', function () {
-//     goToNextSlide()
-//     console.log(currentIndex);
-// })
-
-// console.log(arr.dataset.dir);
