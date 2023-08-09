@@ -344,11 +344,11 @@ body {
 }
 
 /* #region =========== Carousel ================= */
-.carousel111 {
+.carousel {
     padding-top: 150px;
 }
 
-.carousel {
+.carousel-body {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -381,8 +381,16 @@ body {
     color: #ff0000;
     font-weight: 700;
     z-index: 1;
+    cursor: pointer;
 }
 
+/* #endregion */
+
+/* #region =========== Calculator ================= */
+
+.calculator {
+
+}
 /* #endregion */
 
 /* #region ========== Footer ===================== */
