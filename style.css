@@ -363,10 +363,10 @@ body {
 
 .carousel-item {
     /* 2 images */
-    /* flex: 0 0 50%; */ 
+    /* flex: 0 0 50%; */
     flex: 0 0 100%;
     text-align: center;
-    
+
 }
 
 .carousel-item img {
@@ -389,8 +389,77 @@ body {
 /* #region =========== Calculator ================= */
 
 .calculator {
+    text-align: center;
+    align-items: center;
+}
+
+.calculator__input {
+   
+}
+
+.input {
+    text-align: center;
+        padding: 25px 10px;
+        width: 70%;
+        height: 100px;
+        border: 1px solid black;
+}
+
+.input-date {
+    
+}
+
+.calculator__function {
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    /* height: 30px; */
+}
+
+.calculator__function [class*="function-"] {
+    display: flex;
+    height: 30px;
+    margin: 5px 10px;
+    flex: 0 1 25%;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+
+
+.function-addition {    
+    background-color: rgb(98, 235, 109);
+    
 
 }
+
+.function-subtraction {    
+    background-color: rgb(236, 62, 62);
+    
+}
+
+.function-multiplication {    
+    background-color: rgb(236, 62, 62);
+}
+
+.function-division {    
+    background-color: rgb(236, 62, 62);
+}
+
+.calculator__result {
+    text-align: center;
+    padding: 25px 10px;
+    width: 70%;
+    height: 100px;
+    border: 1px solid black;
+}
+
+
 /* #endregion */
 
 /* #region ========== Footer ===================== */

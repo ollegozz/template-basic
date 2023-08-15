@@ -57,3 +57,10 @@ function carousel() {
 }
 
 carousel()
+
+
+function calculator() {
+
+}
+
+calculator()
