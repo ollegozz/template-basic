@@ -33,21 +33,21 @@ function carousel() {
         goToSlide(currentIndex + 1);
     }
     function goToPrevSlide() {
-        if (currentIndex === 0) {
-            return false
-        }
-        goToSlide(currentIndex - 1);
+        currentIndex === 0 ? false : goToSlide(currentIndex - 1)
+        // if (currentIndex === 0) {
+        //     return false
+        // } else goToSlide(currentIndex - 1);
+         
     }
 
     function initArrows() {
         carouselArrows.forEach(arrow => {
             arrow.addEventListener("click", function () {
                 if (arrow.dataset.dir === 'left') {
+                    console.log('left', currentIndex);
                     goToPrevSlide()
-                    console.log(currentIndex);
                 } else if (arrow.dataset.dir === 'right') {
                     goToNextSlide()
-                    console.log('R',currentIndex);
                 }
             })
         })
