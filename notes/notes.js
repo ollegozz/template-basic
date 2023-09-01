@@ -15,3 +15,24 @@ function showBurger() {
 
 showBurger()
 
+const noteTitle = document.getElementById('notes-title')
+const createBtn = document.querySelector('.notes__btn')
+const notesList = document.querySelector('.notes__list')
+
+createBtn.onclick = function () {
+    // notesList.innerHTML = ``
+    noteTitle.value &&    
+    notesList.insertAdjacentHTML('beforeend', `
+        <div class="notes__list-body">
+            <div class="notes__list-input">
+                <div class="notes__list-input_text">${noteTitle.value}</div>
+            </div>
+            <div>
+                <button class="notes__list-button-toggle">V</button>
+                <button class="notes__list-button-remove">X</button>
+            </div>
+        </div>  
+    `
+    )
+    noteTitle.value = ''
+}

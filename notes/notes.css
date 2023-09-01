@@ -386,47 +386,66 @@ body {
 
 .notes__btns {
     text-align: center;
-    border: 2px solid green;
+    border: 2px solid rgb(224, 36, 168);
     border-radius: 15px;
-    margin: 15px 0;
-    
+    margin: 15px 0;    
 }
 
 .notes__btn {
     height: 48px;
     width: 100%;
     font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
-.notes__value {
+.notes__btn:hover {
+    transition: all .5s ease;
+    background-color: rgb(225, 186, 226);
+    }
+
+.notes__list {
+  
+}
+
+.notes__list-body {
     display: flex;
     justify-content: space-between;
     border: 2px solid rgb(225, 186, 226);
     border-radius: 10px;
     padding: 5px;
     align-items: center;
+    margin: 5px 0;
 }
 
-.notes__value-input {
+.notes__list-input {
 }
 
-.notes__value-input_text {
+.notes__list-input_text {
     color: #000;
     align-items: center;
 }
 
-.notes__value button {
+.notes__list button {
     width: 40px;
     height: 40px;
     border-radius: 15%;
+    color: azure;
+    font-weight: 600;
+    opacity: 0.8;
+    cursor: pointer;
 }
 
-.notes__value-button-toggle {
+.notes__list button:hover {
+    opacity: 1;
+}
+
+.notes__list-button-toggle {
     margin-right: 3px;
     background-color: rgb(52, 160, 52);
 }
 
-.notes__value-button-remove {
+.notes__list-button-remove {
     background-color: rgb(230, 74, 74);
 }
 
