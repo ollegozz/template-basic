@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Rubik:regular,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:700,800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <script src="scrypt.js" defer></script>
+    <link rel="stylesheet" href="notes.css">
+    <script src="notes.js" defer></script>
     <title>Template</title>
 </head>
 
@@ -21,8 +21,8 @@
                 <div class="header__menu menu">
                     <nav class="menu__body active">
                         <ul class="menu__list">
-                            <li class="menu__item"><a href="" class="menu__link">HOME</a></li>
-                            <li class="menu__item"><a href="./notes/notes.html" class="menu__link">Notes</a></li>
+                            <li class="menu__item"><a href="/index.html" class="menu__link">HOME</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Notes</a></li>
                             <li class="menu__item"><a href="" class="menu__link">SUPPORT</a></li>
                             <li class="menu__item"><a href="" class="menu__link">CONTACT US</a></li>
                         </ul>
@@ -36,37 +36,40 @@
         </header>
         <main class="main">
 
-            <section class="carousel">
-                <div class="carousel__container">
-                    <div class="carousel-body">
-                        <div class="carousel__arrow" data-dir="left">&lt;</div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item">
-                                <img src="./img/carousel/image1.jpg" alt="Image 1">
+            <section class="notes">
+                <div class="notes__container">
+                    <div class="notes-body">
+                        <div class="notes__title">Заметки</div>
+                        <div class="notes__input">
+                            <input type="text" value="123123123sdfsdfsdf">
+                        </div>
+                        <div class="notes__btns">
+                            <button class="notes__btn">Добавить</button>
+                        </div>
+                        <div class="notes__value">
+                            <div class="notes__value-input">
+                                <div class="notes__value-input_text">asdasda</div>
                             </div>
-                            <div class="carousel-item">
-                                <img src="./img/carousel/image2.jpg" alt="Image 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="./img/carousel/image3.jpg" alt="Image 3">
+                            <div>
+                                <button class="notes__value-button-toggle">V</button>
+                                <button class="notes__value-button-remove">X</button>
                             </div>
                         </div>
-                        <div class="carousel__arrow" data-dir="right">&gt;</div>
                     </div>
                 </div>
             </section>
 
-            
+
         </main>
-        
+
         <footer class="footer">
             <div class="footer__container">
                 <div class="footer__items">
                     <a href="" class="footer__item">
-                        <img src="img/google-play.png" alt="Google Play">
+                        <img src="../img/google-play.png" alt="Google Play">
                     </a>
                     <a href="" class="footer__item">
-                        <img src="img/apple-store.png" alt="Apple Store">
+                        <img src="../img/apple-store.png" alt="Apple Store">
                     </a>
 
                 </div>
@@ -75,4 +78,4 @@
     </div>
 </body>
 
-</html>
+</html>s

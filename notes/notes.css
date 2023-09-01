@@ -343,53 +343,92 @@ body {
 
 }
 
-/* #region =========== Carousel ================= */
-.carousel {
-    padding-top: 150px;
+/* #region =========== NOTES ================= */
+
+.notes {
+    text-align: center;
 }
 
-.carousel-body {
-    position: relative;
+.notes__container {
+   
+    padding-top: 150px;
+    margin: 0 auto;
+}
+
+.notes-body {
+    display: inline-block;
+    width: 80%;
+    background-color: rgb(228, 216, 223);
+    text-align: left;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 10px;
+
+}
+
+.notes__title {
+    font-weight: 800;
+    padding-bottom: 15px;
+}
+
+.notes__input {
+    
+}
+
+.notes__input input {
     width: 100%;
-    overflow: hidden;
+    height: 48px;
+    background-color: rgb(225, 186, 226);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.notes__btns {
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 15px;
+    margin: 15px 0;
+    
+}
+
+.notes__btn {
+    height: 48px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.notes__value {
     display: flex;
+    justify-content: space-between;
+    border: 2px solid rgb(225, 186, 226);
+    border-radius: 10px;
+    padding: 5px;
     align-items: center;
 }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s;
+.notes__value-input {
 }
 
-.carousel-item {
-    /* 2 images */
-    /* flex: 0 0 50%; */
-    flex: 0 0 100%;
-    text-align: center;
-
+.notes__value-input_text {
+    color: #000;
+    align-items: center;
 }
 
-.carousel-item img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    padding: 0 25px;
+.notes__value button {
+    width: 40px;
+    height: 40px;
+    border-radius: 15%;
 }
 
-.carousel__arrow {
-    font-size: 48px;
-    color: #ff0000;
-    font-weight: 700;
-    z-index: 1;
-    cursor: pointer;
+.notes__value-button-toggle {
+    margin-right: 3px;
+    background-color: rgb(52, 160, 52);
 }
 
-/* #endregion */
-
-/* #region ===========  ================= */
-
-
-
+.notes__value-button-remove {
+    background-color: rgb(230, 74, 74);
+}
 
 /* #endregion */
 

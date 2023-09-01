@@ -59,16 +59,3 @@ function carousel() {
 carousel()
 
 
-function calculator() {
-    const resultElem = document.getElementById('result')
-    const input = document.querySelector('.input-date')
-    const ravno = document.querySelector('.function-ravno')
-    
-    console.log(input.value);
-
-    ravno.addEventListener('click', function () {
-        resultElem.textContent = Number(input.value)
-    })
-}
-
-calculator()
