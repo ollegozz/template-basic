@@ -19,13 +19,32 @@ const noteTitle = document.getElementById('notes-title')
 const createBtn = document.querySelector('.notes__btn')
 const notesList = document.querySelector('.notes__list')
 
+const notes = ['Первая задача', 'Вторая задача', 'asdad']
+
+function renderNotes() {
+    // for (let i = 0; i < notes.length; i++) {
+    //     notesList.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i]))
+    // }
+    for (let note of notes) {
+        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(note))
+    }
+}
+
 createBtn.onclick = function () {
     // notesList.innerHTML = ``
-    noteTitle.value &&    
-    notesList.insertAdjacentHTML('beforeend', `
+    // noteTitle.value && getNoteTemplate(noteTitle.value)
+    if (noteTitle.value.lenght === 0) {
+        return
+    }
+    notesList.insertAdjacentHTML('beforeend', getNoteTemplate(noteTitle.value))
+    noteTitle.value = ''
+}
+
+function getNoteTemplate(title) {
+    return `
         <div class="notes__list-body">
             <div class="notes__list-input">
-                <div class="notes__list-input_text">${noteTitle.value}</div>
+                <div class="notes__list-input_text">${title}</div>
             </div>
             <div>
                 <button class="notes__list-button-toggle">V</button>
@@ -33,6 +52,6 @@ createBtn.onclick = function () {
             </div>
         </div>  
     `
-    )
-    noteTitle.value = ''
 }
+
+renderNotes()
