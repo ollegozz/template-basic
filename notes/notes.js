@@ -33,11 +33,16 @@ function renderNotes() {
 createBtn.onclick = function () {
     // notesList.innerHTML = ``
     // noteTitle.value && getNoteTemplate(noteTitle.value)
-    if (noteTitle.value.lenght === 0) {
-        return
-    }
-    notesList.insertAdjacentHTML('beforeend', getNoteTemplate(noteTitle.value))
-    noteTitle.value = ''
+    if (noteTitle.value) {
+        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(noteTitle.value))
+        noteTitle.value = ''
+    } else return
+    
+        
+    
+
+    
+    
 }
 
 function getNoteTemplate(title) {
