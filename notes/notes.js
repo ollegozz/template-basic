@@ -18,6 +18,7 @@ showBurger()
 const noteTitle = document.getElementById('notes-title')
 const createBtn = document.querySelector('.notes__btn')
 const notesList = document.querySelector('.notes__list')
+const btnAdd = document.querySelector('.notes__btn')
 
 const notes = [{
     title: 'Первая задача',
@@ -34,6 +35,10 @@ const notes = [{
 }]
 
 function renderNotes() {
+    notesList.innerHTML = ''
+    if (notes.length === 0) {
+        notesList.innerHTML = '<p>Нет заметок</p>'
+    }
     for (let i = 0; i < notes.length; i++) {
         notesList.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i], i))
     }
@@ -44,16 +49,36 @@ function renderNotes() {
 
 createBtn.onclick = function () {
     // notesList.innerHTML = ``
+    if (noteTitle.value.length === 0) {
+        return
+    }
+
     const newNote = {
         title: noteTitle.value,
         complited: false
     }
-    if (noteTitle.value) {
-        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(newNote))
-        noteTitle.value = ''
-    } else return
 
+    notes.push(newNote)
+
+    // notesList.insertAdjacentHTML('beforeend', getNoteTemplate(newNote))
+    noteTitle.value = ''
+    renderNotes()
 }
+
+notesList.addEventListener('click', function (e) {
+    // console.log(e.target.dataset); 
+    if (e.target.dataset.index) {
+        const index = parseInt(e.target.dataset.index)
+        const type = e.target.dataset.type
+
+        if (type === 'toggle') {
+            notes[index].complited = !notes[index].complited
+        } else if (type === 'remove') {
+            notes.splice(index, 1)
+        }
+    }
+    renderNotes()
+})
 
 function getNoteTemplate(note, index) {
     return `
@@ -67,8 +92,11 @@ function getNoteTemplate(note, index) {
                 <button 
                 class="notes__list-button-toggle ${note.complited && 'button-done'}"
                 data-index="${index}"
-                >V</button>
-                <button class="notes__list-button-remove">X</button>
+                data-type="toggle">V</button>
+
+                <button class="notes__list-button-remove"
+                data-index="${index}"
+                data-type="remove">X</button>
             </div>
         </div>
     `
