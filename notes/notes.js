@@ -19,37 +19,58 @@ const noteTitle = document.getElementById('notes-title')
 const createBtn = document.querySelector('.notes__btn')
 const notesList = document.querySelector('.notes__list')
 
-const notes = ['Первая задача', 'Вторая задача', 'asdad']
+const notes = [{
+    title: 'Первая задача',
+    complited: false
+},
+{
+    title: 'Вторая задача',
+    complited: true
+
+},
+{
+    title: 'Третья задача',
+    complited: false
+}]
 
 function renderNotes() {
-    // for (let i = 0; i < notes.length; i++) {
-    //     notesList.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i]))
-    // }
-    for (let note of notes) {
-        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(note))
+    for (let i = 0; i < notes.length; i++) {
+        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(notes[i], i))
     }
+    // for (let note of notes) {
+    //     notesList.insertAdjacentHTML('beforeend', getNoteTemplate(note))
+    // }
 }
 
 createBtn.onclick = function () {
     // notesList.innerHTML = ``
+    const newNote = {
+        title: noteTitle.value,
+        complited: false
+    }
     if (noteTitle.value) {
-        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(noteTitle.value))
+        notesList.insertAdjacentHTML('beforeend', getNoteTemplate(newNote))
         noteTitle.value = ''
     } else return
 
 }
 
-function getNoteTemplate(title) {
+function getNoteTemplate(note, index) {
     return `
         <div class="notes__list-body">
             <div class="notes__list-input">
-                <div class="notes__list-input_text">${title}</div>
+                <div class="notes__list-input_text ${note.complited && 'note-done'}">
+                ${note.title}
+                </div>
             </div>
             <div>
-                <button class="notes__list-button-toggle">V</button>
+                <button 
+                class="notes__list-button-toggle ${note.complited && 'button-done'}"
+                data-index="${index}"
+                >V</button>
                 <button class="notes__list-button-remove">X</button>
             </div>
-        </div>  
+        </div>
     `
 }
 
