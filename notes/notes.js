@@ -103,3 +103,66 @@ function getNoteTemplate(note, index) {
 }
 
 renderNotes()
+
+
+
+
+let mode = 'full'
+
+const output = document.getElementById('output')
+const fullBtn = document.getElementById('full')
+const dateBtn = document.getElementById('date')
+const timeBtn = document.getElementById('time')
+
+
+// Замыкание
+function bindMode(nameMode) {
+    return function () {
+        mode = nameMode
+        update()
+    }
+}
+
+fullBtn.onclick = bindMode('full')
+dateBtn.onclick = bindMode('date')
+timeBtn.onclick = bindMode('time')
+
+// fullBtn.onclick = function () {
+//     mode = 'full'
+//     update()
+// }
+
+// dateBtn.onclick = function () {
+//     mode = 'date'
+//     update()
+// }
+
+// timeBtn.onclick = function () {
+//     mode = 'time'
+//     update()
+// }
+
+function update() {
+    output.textContent = format(mode)
+}
+
+setInterval(update, 1000)
+
+// setInterval(() => {
+//     update()
+// }, 1000)
+
+update()
+
+function format(formatMode) {
+    const now = new Date()
+
+    switch (formatMode) {
+        case 'time': return now.toLocaleTimeString()
+        case 'date': return now.toLocaleDateString()
+        case 'full': return now.toLocaleDateString() + ' ' + now.toLocaleTimeString()
+        default: return now.toLocaleTimeString()
+    }
+}
+
+

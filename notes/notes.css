@@ -459,6 +459,75 @@ body {
 
 /* #endregion */
 
+/* #region ========== DATA-time ===================== */
+
+.data {
+    text-align: center;
+}
+
+.data__container {
+    
+    padding-top: 50px;
+}
+
+.data-body {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.data-body-title {
+    font-size: 24px;
+    text-align: left;
+    padding: 15px;
+}
+
+.data-body__content {
+    background-color: rgb(143, 137, 137);
+    border-radius: 15px;
+}
+
+.data-body__content-output {
+    font-size: 24px;
+    color: #000;
+    padding: 40px 15px 15px 15px;
+}
+
+.data-body__content-button {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.data-body__content-button button {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    color: aliceblue;
+    font-weight: 700;
+}
+
+.data-body__content-button button:hover {
+    transition: all .5s ease;
+    filter: brightness(120%)
+}
+
+.data-body__content-button-full {
+    background-color: rgb(74, 76, 219);
+}
+
+.data-body__content-button-data {
+    background-color: rgb(57, 180, 133);
+}
+
+.data-body__content-button-time {
+    background-color: rgb(184, 42, 84);
+}
+
+/* #endregion */
+
+
 /* #region ========== Footer ===================== */
 .footer {
     padding: 45px 0;
