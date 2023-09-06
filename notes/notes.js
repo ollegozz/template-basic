@@ -105,8 +105,6 @@ function getNoteTemplate(note, index) {
 renderNotes()
 
 
-
-
 let mode = 'full'
 
 const output = document.getElementById('output')
