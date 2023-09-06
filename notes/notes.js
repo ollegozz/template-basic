@@ -127,21 +127,6 @@ fullBtn.onclick = bindMode('full')
 dateBtn.onclick = bindMode('date')
 timeBtn.onclick = bindMode('time')
 
-// fullBtn.onclick = function () {
-//     mode = 'full'
-//     update()
-// }
-
-// dateBtn.onclick = function () {
-//     mode = 'date'
-//     update()
-// }
-
-// timeBtn.onclick = function () {
-//     mode = 'time'
-//     update()
-// }
-
 function update() {
     output.textContent = format(mode)
 }
