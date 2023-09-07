@@ -105,47 +105,115 @@ function getNoteTemplate(note, index) {
 renderNotes()
 
 
-let mode = 'full'
+function timer() {
 
-const output = document.getElementById('output')
-const fullBtn = document.getElementById('full')
-const dateBtn = document.getElementById('date')
-const timeBtn = document.getElementById('time')
+    let mode = 'full'
+
+    const output = document.getElementById('output')
+    const fullBtn = document.getElementById('full')
+    const dateBtn = document.getElementById('date')
+    const timeBtn = document.getElementById('time')
 
 
-// Замыкание
-function bindMode(nameMode) {
-    return function () {
-        mode = nameMode
-        update()
+    // Замыкание
+    function bindMode(nameMode) {
+        return function () {
+            mode = nameMode
+            update()
+        }
+    }
+
+    fullBtn.onclick = bindMode('full')
+    dateBtn.onclick = bindMode('date')
+    timeBtn.onclick = bindMode('time')
+
+    function update() {
+        output.textContent = format(mode)
+    }
+
+    setInterval(update, 1000)
+
+    // setInterval(() => {
+    //     update()
+    // }, 1000)
+
+    update()
+
+    function format(formatMode) {
+        const now = new Date()
+
+        switch (formatMode) {
+            case 'time': return now.toLocaleTimeString()
+            case 'date': return now.toLocaleDateString()
+            case 'full': return now.toLocaleDateString() + ' ' + now.toLocaleTimeString()
+            default: return now.toLocaleTimeString()
+        }
     }
 }
 
-fullBtn.onclick = bindMode('full')
-dateBtn.onclick = bindMode('date')
-timeBtn.onclick = bindMode('time')
+// timer()
 
-function update() {
-    output.textContent = format(mode)
+const obj = {
+    name: 'Oleg',
+    lastName: 'aff',
+    age: 32,
+    'age win': 2023
 }
 
-setInterval(update, 1000)
 
-// setInterval(() => {
-//     update()
-// }, 1000)
+const { ['age win']: ageWin } = obj
+ 
+// for (let key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//         console.log(key); 
+//     }
+// }
 
-update()
+const a = Object.keys(obj).map((key) => {
+    // console.log(obj[key]);
 
-function format(formatMode) {
-    const now = new Date()
+    return obj[key]
+})
 
-    switch (formatMode) {
-        case 'time': return now.toLocaleTimeString()
-        case 'date': return now.toLocaleDateString()
-        case 'full': return now.toLocaleDateString() + ' ' + now.toLocaleTimeString()
-        default: return now.toLocaleTimeString()
+// this
+const logger = {
+    keys() {
+        console.log('Object keys', Object.keys(this))
+    },
+
+    keysAndValue() {
+        Object.keys(this).forEach((key) => {
+            console.log('Key', key)
+            console.log('Value', this[key])
+        })
     }
 }
 
+const bound = logger.keys.bind(obj)
+// bound()
 
+
+
+//наследование
+
+class Human {
+    isHumaa = true
+    humnGreet() {
+        console.log('Good');
+    }
+}
+
+class Person extends Human {
+    constructor(name, age) {
+        super()
+        this.name = name
+        this.age = age
+    }
+    sayHello() {
+         console.log('Hello', this.name);
+    }
+}
+
+const person1 = new Person('Oleg', 32)
+
+console.log(person1.isHumaa);
