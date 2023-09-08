@@ -216,4 +216,4 @@ class Person extends Human {
 
 const person1 = new Person('Oleg', 32)
 
-console.log(person1.isHumaa);
+// console.log(person1.isHumaa);
