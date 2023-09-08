@@ -371,6 +371,7 @@ body {
 }
 
 .request__body_input {
+    margin-bottom: 20px;
 }
 
 .request__body_input input {
@@ -385,6 +386,18 @@ body {
 
 .request__body_input input:focus {
     background-color: rgb(243, 239, 239);
+}
+
+.request__body_list {
+    width: 78%;
+    margin: 0 auto;
+    text-align: left;    
+}
+
+.request__body_list_item {
+    padding: 5px;
+    color: #000;
+    font-size: 16px;
 }
 
 /* #endregion */
