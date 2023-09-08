@@ -63,3 +63,24 @@ function toHtml(user) {
 
 
 start()
+
+
+function getRandomColor() {
+    const title = document.querySelector('.request__body_title')
+    let arrChar = []
+    let titleText = title.innerHTML  
+    
+    const generateColor = () => {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16)
+    }
+
+    for (let char of titleText) {        
+        char = `<span style=\'color: ${generateColor()}\'>${char}</span>`       
+        arrChar.push(char)
+    }
+
+    title.innerHTML = arrChar.join('')
+}
+
+getRandomColor()
+
