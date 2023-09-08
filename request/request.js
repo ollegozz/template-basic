@@ -64,23 +64,41 @@ function toHtml(user) {
 
 start()
 
+const title = document.querySelector('.request__body_title')
 
 function getRandomColor() {
-    const title = document.querySelector('.request__body_title')
-    let arrChar = []
-    let titleText = title.innerHTML  
     
-    const generateColor = () => {
-        return '#' + Math.floor(Math.random() * 16777215).toString(16)
-    }
+    let arrChar = []
+    let titleText = title.innerHTML      
 
-    for (let char of titleText) {        
-        char = `<span style=\'color: ${generateColor()}\'>${char}</span>`       
+    for (let char of titleText) {         
+
+        function generateColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16)
+        }
+        const colorChar = generateColor()
+
+        char = `<span style=\'color: ${colorChar}\'>${char}</span>`       
         arrChar.push(char)
     }
 
     title.innerHTML = arrChar.join('')
 }
 
-getRandomColor()
 
+
+// getRandomColor()
+
+title.addEventListener('mousemove', () => {
+        title.innerHTML = 'Список пользователей'
+        getRandomColor()       
+})
+
+title.addEventListener('mousemove', () => {
+    title.innerHTML = 'Список пользователей'
+    getRandomColor()
+    setTimeout(() => {
+        title.innerHTML = 'Список пользователей'
+        
+    },500)
+})
