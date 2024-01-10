@@ -344,8 +344,34 @@ body {
 }
 
 /* #region =========== GRID ================= */
+.grid {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+}
+.grid__body {
+    height: 800px;
+    width: 1300px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 150px auto 40%;
+    grid-template-rows: 250px 10vw 15rem;
+}
 
+.grid__body_1 {
+    max-width: 50%;
+    height: 100%;
+    margin: 10px;
+    border: 2px solid rgb(197, 85, 85);
+}
 
+.grid__body_2 {
+    max-width: 50%;
+    height: 100%;
+    margin: 10px;
+    border: 2px solid rgb(177, 103, 219);
+}
 
 
 /* #endregion */
